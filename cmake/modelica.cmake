@@ -1,4 +1,5 @@
-macro(add_modelica NAME SRC FILES LIBS)
+macro(add_modelica_model NAME SRC FILES LIBS)
+
     set(${NAME}_src
         ${NAME}_01exo.c
         ${NAME}_02nls.c
@@ -36,8 +37,9 @@ macro(add_modelica NAME SRC FILES LIBS)
         ${${NAME}_hdr})
 
     add_custom_command(OUTPUT ${${NAME}_src} ${${NAME}_hdr} ${${NAME}_data}
-        COMMAND ${OMC} -q -s ${SRC} ${FILES} ${LIBS}
+        COMMAND ${OMC_COMPILER} -q -s ${SRC} ${FILES} ${LIBS}
         DEPENDS ${SRC} ${FILES})
 
 endmacro()
 
+# vim: set et fenc=utf-8 ff=unix sts=0 sw=4 ts=4 ft=cmake :
