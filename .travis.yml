@@ -6,6 +6,7 @@ before_install:
   - sudo apt-get update --fix-missing -qq
 
 install:
+  - sudo pip install cpp-coveralls
   - sudo apt-get install omc omlib-modelica-3.2.1
 
 #before_script:
@@ -13,9 +14,9 @@ install:
 script:
   - mkdir build
   - cd build
-  - cmake .. && make && ctest
+  - cmake .. -DCOVERAGE=ON && make && ctest
 
-#after_success:
-#  - coveralls
+after_success:
+  - coveralls
 
 #  vim: set et fenc=utf-8 ff=unix sts=0 sw=2 ts=2 : 
