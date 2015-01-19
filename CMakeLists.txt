@@ -16,9 +16,7 @@ find_library(MATH_LIB m)
 
 if(COVERAGE)
     message(STATUS "coverage enabled")
-    find_package(GCOV REQUIRED)
-    link_libraries(${GCOV_LIBRARY})
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -ftest-coverage -fprofile-arcs")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -O0 --coverage -fprofile-arcs -ftest-coverage")
 endif()
 
 include(modelica)
