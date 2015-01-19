@@ -14,9 +14,9 @@ install:
 script:
   - mkdir build
   - cd build
-  - cmake .. -DCOVERAGE=ON && make && ctest
+  - cmake && make && ctest
 
-after_success:
-  - coveralls
+#after_success:
+#  - coveralls
 
 #  vim: set et fenc=utf-8 ff=unix sts=0 sw=2 ts=2 : 

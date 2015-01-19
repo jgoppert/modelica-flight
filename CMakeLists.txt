@@ -2,22 +2,17 @@ cmake_minimum_required(VERSION 2.8)
 
 project(modelica-flight C)
 
-option(COVERAGE "compute coverage" OFF)
-
-#set(CMAKE_C_COMPILER "/usr/bin/clang")
-list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
-list(APPEND CMAKE_SHARED_LIBRARY_LINK_FLAGS -rdynamic)
+set(CMAKE_SHARED_LIBRARY_LINK_FLAGS "${CMAKE_SHARED_LIBRARY_LINK_FLAGS} -rdynamics")
+
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 find_package(OMC REQUIRED)
 find_package(LAPACK REQUIRED)
 find_package(BLAS REQUIRED)
 find_package(Threads REQUIRED)
 find_library(MATH_LIB m)
 
-if(COVERAGE)
-    message(STATUS "coverage enabled")
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -O0 --coverage -fprofile-arcs -ftest-coverage")
-endif()
+set(CMAKE_C_FLAGS_COVERAGE "-g -O0 --coverage -fprofile-arcs -ftest-coverage")
 
 include(modelica)
 
