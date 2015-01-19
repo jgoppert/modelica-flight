@@ -85,14 +85,15 @@ Copyright &copy 2015, James Goppert.
   end Quad;
 
   model QuadTest
+    extends Modelica.Icons.Example;
     inner Modelica.Mechanics.MultiBody.World world(n = {0, 0, 1}, enableAnimation = false) annotation(Placement(visible = true, transformation(origin = {-80, 74}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-    Flight.SimBus simbus1 annotation(Placement(visible = true, transformation(origin = {66, -2}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {54, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
     Flight.Quad quad1(arm_angles = {-45, 45, 135, -135}) annotation(Placement(visible = true, transformation(origin = {0, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-    Modelica.Blocks.Interfaces.RealInput u[4] annotation(Placement(visible = true, transformation(origin = {-78, -18}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {-78, -18}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
     Modelica.Blocks.Math.Add add1[4] annotation(Placement(visible = true, transformation(origin = {-32, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
     Flight.QuadController quadcontroller1 annotation(Placement(visible = true, transformation(origin = {-78, 36}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-    Modelica.Blocks.Interfaces.RealOutput y[3] annotation(Placement(visible = true, transformation(origin = {80, -26}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {38, -36}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
     Modelica.Mechanics.MultiBody.Sensors.AbsoluteSensor absolutesensor1(get_r = true, get_v = true, get_a = true, get_w = true, get_z = true, get_angles = true, sequence = {1, 2, 3}, resolveInFrame = Modelica.Mechanics.MultiBody.Types.ResolveInFrameA.frame_resolve) annotation(Placement(visible = true, transformation(origin = {64, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Modelica.Blocks.Interfaces.RealInput u[4] annotation(Placement(visible = true, transformation(origin = {-78, -18}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {-90, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Modelica.Blocks.Interfaces.RealOutput y[3] annotation(Placement(visible = true, transformation(origin = {80, -26}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {90, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Flight.SimBus simbus1 annotation(Placement(visible = true, transformation(origin = {66, -2}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {88, -90}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   equation
     connect(absolutesensor1.r, y) annotation(Line(points = {{54, 19}, {48, 19}, {48, -26}, {72, -26}, {72, -26}}, color = {0, 0, 127}));
     connect(absolutesensor1.frame_resolve, absolutesensor1.frame_a) annotation(Line(points = {{74, 30}, {84, 30}, {84, 51}, {54, 51}, {54, 33}}, color = {95, 95, 95}));
