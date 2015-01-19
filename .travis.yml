@@ -6,7 +6,7 @@ before_install:
   - sudo apt-get update --fix-missing -qq
 
 install:
-  - sudo apt-get install omc
+  - sudo apt-get install omc omlib-modelica-3.2.1
 
 #before_script:
 
@@ -17,3 +17,5 @@ script:
 
 #after_success:
 #  - coveralls
+
+#  vim: set et fenc=utf-8 ff=unix sts=0 sw=2 ts=2 : 
