@@ -128,4 +128,4 @@ Copyright &copy 2015, James Goppert.
   end QuadController;
 end Flight;
 
-/* vim: set ft=modelica et fenc=utf-8 ff=unix sts=0 sw=2 ts=2 : */
+/* vim: set ft=modelica et fenc=utf-8 ff=unix sts=0 sw=2 ts=2 nowrap: */
