@@ -112,3 +112,5 @@ package Flight
     annotation(Diagram(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = true, initialScale = 0.1, grid = {2, 2})), Icon(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = true, initialScale = 0.1, grid = {2, 2}), graphics = {Rectangle(extent = {{-100, 100}, {100, -100}}), Text(origin = {-35, 88}, lineColor = {0, 0, 255}, extent = {{-105, 52}, {175, 12}}, textString = "%name"), Rectangle(origin = {3, 15}, extent = {{-43, 53}, {43, -53}})}));
   end QuadController;
 end Flight;
+
+/* vim: set ft=modelica et fenc=utf-8 ff=unix sts=0 sw=2 ts=2 : */
