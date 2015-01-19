@@ -11,8 +11,8 @@ install:
 #before_script:
 
 script:
-  - mkdir tmp
-  - cd tmp
+  - mkdir build
+  - cd build
   - omc ../test.mos
 
 #after_success:
