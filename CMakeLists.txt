@@ -15,3 +15,6 @@ add_custom_command(OUTPUT QuadTest
 	DEPENDS ${CMAKE_SOURCE_DIR}/test/QuadTest.mo ${CMAKE_SOURCE_DIR}/Flight.mo)
 
 add_test(QuadTest QuadTest)
+
+set(CPACK_PACKAGE_CONTACT "james.goppert@gmail.com")
+include(CPack)
