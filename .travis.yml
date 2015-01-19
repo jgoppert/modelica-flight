@@ -1,0 +1,16 @@
+language: c
+
+before_install:
+  - do echo "deb http://build.openmodelica.org/apt `lsb_release -cs` nightly" | sudo tee /etc/apt/sources.list.d/openmodelica.list 
+  - wget -q http://build.openmodelica.org/apt/openmodelica.asc -O- | sudo apt-key add - 
+  - sudo apt-get update --fix-missing -qq
+
+install:
+  - sudo apt-get install openmodelica
+
+#before_script:
+
+script: omc test.mos
+
+after_success:
+  - coveralls

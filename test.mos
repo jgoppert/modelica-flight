@@ -1,0 +1,3 @@
+loadModel(Modelica); getErrorString();
+loadFile("../Flight.mo"); getErrorString();
+linearize(Flight.QuadTest); getErrorString();
