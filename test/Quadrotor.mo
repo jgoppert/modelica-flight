@@ -1,3 +1,3 @@
 model Quadrotor
-  extends Flight.QuadTest;
+  extends Flight.Examples.QuadTest;
 end Quadrotor;
