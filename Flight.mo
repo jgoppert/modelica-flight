@@ -1,8 +1,6 @@
 package Flight
-
   package UserGuide
-
-    annotation(Documentation(info="<html>
+    annotation(Documentation(info = "<html>
 <p>
 Licensed by James Goppert under the Modelica License 2<br />
 Copyright &copy 2015, James Goppert.
@@ -11,7 +9,6 @@ Copyright &copy 2015, James Goppert.
 <p>
 <i>This Modelica package is <u>free</u> software and the use is completely at <u>your own risk</u>; it can be redistributed and/or modified under the terms of the Modelica License 2. For license conditions (including the disclaimer of warranty) see <a href=\"modelica://Modelica.UsersGuide.ModelicaLicense2\">Modelica.UsersGuide.ModelicaLicense2</a> or visit <a href=\"http://www.modelica.org/licenses/ModelicaLicense2\"> http://www.modelica.org/licenses/ModelicaLicense2</a>.</i>
 </p></html>"));
-
   end UserGuide;
 
   import SI = Modelica.SIunits;
@@ -95,7 +92,7 @@ Copyright &copy 2015, James Goppert.
     Modelica.Blocks.Math.Add add1[4] annotation(Placement(visible = true, transformation(origin = {-32, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
     Flight.QuadController quadcontroller1 annotation(Placement(visible = true, transformation(origin = {-78, 36}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
     Modelica.Blocks.Interfaces.RealOutput y[3] annotation(Placement(visible = true, transformation(origin = {80, -26}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {38, -36}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-    Modelica.Mechanics.MultiBody.Sensors.AbsoluteSensor absolutesensor1(get_r = true, get_v = true, get_a = true, get_w = true, get_z = true, get_angles = true, sequence = {1, 2, 3}) annotation(Placement(visible = true, transformation(origin = {64, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Modelica.Mechanics.MultiBody.Sensors.AbsoluteSensor absolutesensor1(get_r = true, get_v = true, get_a = true, get_w = true, get_z = true, get_angles = true, sequence = {1, 2, 3}, resolveInFrame = Modelica.Mechanics.MultiBody.Types.ResolveInFrameA.frame_resolve) annotation(Placement(visible = true, transformation(origin = {64, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   equation
     connect(absolutesensor1.r, y) annotation(Line(points = {{54, 19}, {48, 19}, {48, -26}, {72, -26}, {72, -26}}, color = {0, 0, 127}));
     connect(absolutesensor1.frame_resolve, absolutesensor1.frame_a) annotation(Line(points = {{74, 30}, {84, 30}, {84, 51}, {54, 51}, {54, 33}}, color = {95, 95, 95}));
@@ -127,5 +124,3 @@ Copyright &copy 2015, James Goppert.
     annotation(Diagram(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = true, initialScale = 0.1, grid = {2, 2})), Icon(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = true, initialScale = 0.1, grid = {2, 2}), graphics = {Rectangle(extent = {{-100, 100}, {100, -100}}), Text(origin = {-35, 88}, lineColor = {0, 0, 255}, extent = {{-105, 52}, {175, 12}}, textString = "%name"), Rectangle(origin = {3, 15}, extent = {{-43, 53}, {43, -53}})}));
   end QuadController;
 end Flight;
-
-/* vim: set ft=modelica et fenc=utf-8 ff=unix sts=0 sw=2 ts=2 nowrap: */
