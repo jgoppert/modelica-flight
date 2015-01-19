@@ -1,9 +1,11 @@
 cmake_minimum_required(VERSION 2.8)
-find_program(OMC omc)
-find_program(MAKE make)
-
 
 project(modelica-flight C)
+
+find_program(OMC omc)
+if (${OMC} STREQUAL "OMC-NOTFOUND")
+    message(FATAL_ERROR "omc required: (Ubuntu) sudo apt-get install openmodelica")
+endif()
 
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 include(modelica)
