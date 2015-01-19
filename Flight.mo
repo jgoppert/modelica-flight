@@ -2,16 +2,15 @@ package Flight
 
   package UserGuide
 
-    annotation(Documentation=info="<html>
+    annotation(Documentation(info="<html>
 <p>
-Licensed by &lt;Licensor&gt; under the Modelica License 2<br />
-Copyright &copy; &lt;year1&gt;-&lt;year2&gt;, &lt;name of copyright
-holder(s)&gt;.
+Licensed by James Goppert under the Modelica License 2<br />
+Copyright &copy 2015, James Goppert.
 </p>
 
 <p>
 <i>This Modelica package is <u>free</u> software and the use is completely at <u>your own risk</u>; it can be redistributed and/or modified under the terms of the Modelica License 2. For license conditions (including the disclaimer of warranty) see <a href=\"modelica://Modelica.UsersGuide.ModelicaLicense2\">Modelica.UsersGuide.ModelicaLicense2</a> or visit <a href=\"http://www.modelica.org/licenses/ModelicaLicense2\"> http://www.modelica.org/licenses/ModelicaLicense2</a>.</i>
-</p>");
+</p></html>"));
 
   end UserGuide;
 
