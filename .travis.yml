@@ -6,7 +6,7 @@ before_install:
   - sudo apt-get update --fix-missing -qq
 
 install:
-  - sudo apt-get install openmodelica
+  - sudo apt-get install omc
 
 #before_script:
 
@@ -15,5 +15,5 @@ script:
   - cd tmp
   - omc ../test.mos
 
-after_success:
-  - coveralls
+#after_success:
+#  - coveralls
