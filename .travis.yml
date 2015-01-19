@@ -10,7 +10,10 @@ install:
 
 #before_script:
 
-script: omc test.mos
+script:
+  - mkdir tmp
+  - cd tmp
+  - omc ../test.mos
 
 after_success:
   - coveralls
